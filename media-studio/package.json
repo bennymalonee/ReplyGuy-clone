@@ -1,0 +1,15 @@
+{
+  "name": "ultimate-multimodal",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "platform",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w platform",
+    "build": "npm run build -w platform",
+    "start": "npm run start -w platform",
+    "lint": "npm run lint -w platform"
+  }
+}

@@ -32,6 +32,25 @@ cp .env.example .env.local
 pnpm dev
 ```
 
+## UGC Media Studio
+
+This repo includes **Ultimate Multimodal** — a MuAPI-powered UGC media studio for generating product ads, lifestyle try-ons, and social video content. It lives in [`media-studio/`](media-studio/).
+
+```bash
+cd media-studio
+npm install
+cp .env.example .env.local   # add MUAPI_API_KEY
+npm run dev                  # http://localhost:3000
+```
+
+Features:
+- UGC Video Factory, Ads Workflow, Lifestyle Try-On
+- Image & Video studios (100+ MuAPI models)
+- Admin dashboard at `/dashboard`
+- Workflow recipes from [Generative-Media-Skills](https://github.com/SamurAIGPT/Generative-Media-Skills)
+
+See [media-studio/README.md](media-studio/README.md) for full docs.
+
 > [!NOTE]  
 > I use [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) package for update this project.
 >
