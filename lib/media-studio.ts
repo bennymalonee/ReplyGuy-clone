@@ -41,5 +41,5 @@ export function buildMediaStudioUrl(
 }
 
 export function getMediaStudioSetupHint(): string {
-  return `Set MEDIA_STUDIO_URL or NEXT_PUBLIC_MEDIA_STUDIO_URL to your deployed studio URL (for example ${env.NEXT_PUBLIC_APP_URL.replace(/\/+$/, "")}/media-studio or https://studio.yourdomain.com).`;
+  return `Set MEDIA_STUDIO_URL or NEXT_PUBLIC_MEDIA_STUDIO_URL to your deployed studio URL (for example http://localhost:3001 or https://studio.yourdomain.com) so ReplyGuy can embed the app in an iframe.`;
 }
