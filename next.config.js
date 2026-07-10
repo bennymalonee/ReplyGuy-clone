@@ -33,6 +33,18 @@ const nextConfig = {
         protocol: "https",
         hostname: "pbs.twimg.com",
       },
+      {
+        protocol: "https",
+        hostname: "api.muapi.ai",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.muapi.ai",
+      },
+      {
+        protocol: "https",
+        hostname: "*.amazonaws.com",
+      },
     ],
   },
   experimental: {

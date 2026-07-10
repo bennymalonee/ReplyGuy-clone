@@ -46,6 +46,7 @@ import { EditComment } from "./_components/edit-comment";
 import { FindNewContentButton } from "./_components/find-content-button";
 import { GenerateComment } from "./_components/generate-comment";
 import { PostComment } from "./_components/post-comment";
+import { CampaignMediaAssets } from "@/components/media-studio/campaign-media-assets";
 
 export const metadata = {
   title: "Dashboard",
@@ -104,6 +105,8 @@ export default async function DashboardPage({
         </div>
         <FindNewContentButton />
       </div>
+
+      <CampaignMediaAssets campaignId={campaignId} campaignName={campaign.name} />
 
       <div className="grid gap-10">
         <ClientTabWrapper>

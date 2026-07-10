@@ -19,6 +19,7 @@ let cachedSchemaPath: string | null = null;
 function schemaCandidates(customPath?: string): string[] {
   if (customPath) return [customPath];
   return [
+    join(process.cwd(), "media-studio", "skills", "schema_data.json"),
     join(process.cwd(), "..", "skills", "schema_data.json"),
     join(process.cwd(), "skills", "schema_data.json"),
     join(process.cwd(), "..", "..", "skills", "schema_data.json"),

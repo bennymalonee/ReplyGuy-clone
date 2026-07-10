@@ -3,6 +3,7 @@ import { join } from "path";
 
 function findSkillsRoot(): string {
   const candidates = [
+    join(process.cwd(), "media-studio", "skills", "library"),
     join(process.cwd(), "..", "skills", "library"),
     join(process.cwd(), "skills", "library"),
     join(process.cwd(), "..", "..", "skills", "library"),

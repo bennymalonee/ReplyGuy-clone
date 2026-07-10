@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/media-studio.css";
 
 import { fontHeading, fontSans, fontUrban } from "@/assets/fonts";
 

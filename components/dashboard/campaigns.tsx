@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Campaign } from "@prisma/client";
 import { formatDistanceToNow } from "date-fns";
-import { Bot, MessageSquareIcon } from "lucide-react";
+import { Bot, MessageSquareIcon, Wand2 } from "lucide-react";
 
 import { getCurrentUser } from "@/lib/session";
 import {
@@ -15,6 +15,7 @@ import { CollapsibleServer } from "@/components/dashboard/collapsible-server";
 import { getNotificationsByCampaign } from "@/app/actions/notification";
 import { getPostedPostsByCampaign } from "@/app/actions/post";
 import { getPostPreferencesByCampaign } from "@/app/actions/post-preferences";
+import { getMediaStudioProjectCountByCampaign } from "@/lib/media-studio-storage";
 
 import AutopilotSwitch from "./autopilot-switch";
 import { CampaignMenu } from "./campaign-menu";
@@ -51,10 +52,10 @@ export async function Campaigns({ campaigns }: CampaignProps) {
         });
 
         const preferences = await getPostPreferencesByCampaign(campaign.id);
+        const mediaAssetCount = await getMediaStudioProjectCountByCampaign(campaign.id);
 
         return (
-          <>
-            <Card key={index}>
+            <Card key={campaign.id}>
               <CardHeader className="flex flex-row items-start justify-between">
                 <div className="flex flex-col space-y-1.5">
                   <Link
@@ -88,6 +89,15 @@ export async function Campaigns({ campaigns }: CampaignProps) {
                         <span className="font-normal">
                           {postsIn24Hours?.length}
                         </span>
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="flex-1 rounded-md border p-4">
+                    <div className="flex flex-row items-center space-x-4">
+                      <Wand2 className="size-5" />
+                      <h3 className="text-sm font-semibold">
+                        Media assets:{" "}
+                        <span className="font-normal">{mediaAssetCount}</span>
                       </h3>
                     </div>
                   </div>
@@ -147,7 +157,6 @@ export async function Campaigns({ campaigns }: CampaignProps) {
                 )}
               </CardContent>
             </Card>
-          </>
         );
       })}
     </div>

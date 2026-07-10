@@ -16,7 +16,11 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@ultimate-multimodal/shared": ["./media-studio/packages/shared/src/index.ts"],
+      "@ultimate-multimodal/muapi-client": ["./media-studio/packages/muapi-client/src/index.ts"],
+      "@ultimate-multimodal/workflow-engine": ["./media-studio/packages/workflow-engine/src/index.ts"],
+      "@ultimate-multimodal/workflow-engine/server": ["./media-studio/packages/workflow-engine/src/server.ts"]
     },
     "plugins": [
       {

@@ -43,6 +43,7 @@ next-env.d.ts
 /media-studio/node_modules
 /media-studio/data
 /media-studio/platform/.next
+/media-studio-data
 
 .vscode
 .contentlayer

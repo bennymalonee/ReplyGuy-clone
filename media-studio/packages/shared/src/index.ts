@@ -70,6 +70,7 @@ export interface Project {
   id: string;
   name: string;
   workflow: string;
+  campaignId?: string;
   inputs: Record<string, string>;
   outputs: string[];
   createdAt: string;

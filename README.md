@@ -34,32 +34,50 @@ pnpm dev
 
 ## UGC Media Studio
 
-This repo includes **Ultimate Multimodal** — a MuAPI-powered UGC media studio for generating product ads, lifestyle try-ons, and social video content. It lives in [`media-studio/`](media-studio/).
+This repo includes **Ultimate Multimodal** — a MuAPI-powered UGC media studio mounted **natively inside ReplyGuy** (no iframe, no second server).
+
+### Setup
+
+1. Add your MuAPI key to the main app environment:
 
 ```bash
-cd media-studio
+MUAPI_API_KEY=your_key_here
+```
+
+Or configure it per-user at `/dashboard/media-studio/settings`.
+
+2. Apply the media studio database tables:
+
+```bash
+npx prisma db push
+```
+
+3. Start ReplyGuy:
+
+```bash
 npm install
-cp .env.example .env.local   # add MUAPI_API_KEY
-npm run dev                  # http://localhost:3000
+npm run dev
 ```
 
-To embed the studio inside the main ReplyGuy app shell, set one of these in the main app environment:
+4. Open the studio at `/dashboard/media-studio`.
 
-```bash
-MEDIA_STUDIO_URL=http://localhost:3001
-# or
-NEXT_PUBLIC_MEDIA_STUDIO_URL=http://localhost:3001
-```
+### Routes
 
-Then run the media studio on that URL/port so `/dashboard/media-studio` and `/project/media-studio` can load it inside ReplyGuy.
+| Route | Description |
+|-------|-------------|
+| `/dashboard/media-studio` | Overview |
+| `/dashboard/media-studio/image` | Image generation |
+| `/dashboard/media-studio/video` | Video generation |
+| `/dashboard/media-studio/ugc/*` | UGC workflows |
+| `/dashboard/media-studio/settings` | MuAPI key & defaults |
+| `/project/media-studio?id={campaignId}` | Project shortcuts (links assets to campaign) |
+| `/project?id={campaignId}` | Campaign workspace with media assets panel |
 
-Features:
-- UGC Video Factory, Ads Workflow, Lifestyle Try-On
-- Image & Video studios (100+ MuAPI models)
-- Admin dashboard at `/dashboard`
-- Workflow recipes from [Generative-Media-Skills](https://github.com/SamurAIGPT/Generative-Media-Skills)
+Pass `?campaignId=` (or open from `/project/media-studio?id=`) to auto-link generated outputs to a campaign.
 
-See [media-studio/README.md](media-studio/README.md) for full docs.
+The `media-studio/` folder contains the MuAPI client, workflow engine, and Generative-Media-Skills recipes used by the native routes.
+
+See [media-studio/README.md](media-studio/README.md) for package-level docs.
 
 > [!NOTE]  
 > I use [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) package for update this project.

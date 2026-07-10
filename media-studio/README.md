@@ -12,27 +12,32 @@ A self-hosted generative media studio powered by [MuAPI](https://muapi.ai) and [
 - **Admin Dashboard** — Job queue, projects, API settings, credit balance
 - **Dual design system** — Skillshare-style creator UI (DESIGN1) + Officevibe-style dashboard (DESIGN2)
 
-## Quick Start
+## Quick Start (inside ReplyGuy)
+
+The studio runs natively in the main ReplyGuy Next.js app — you do **not** need to start `platform/` separately.
 
 ```bash
-# Install dependencies
+# From the ReplyGuy repo root
 npm install
+npx prisma db push
 
-# Configure API key
-cp .env.example .env.local
-# Add MUAPI_API_KEY=your_key_here
+# Add to .env.local
+MUAPI_API_KEY=your_key_here
 
-# Start dev server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) for the creator studio.
-Open [http://localhost:3000/dashboard](http://localhost:3000/dashboard) for the admin dashboard.
+Open [http://localhost:3000/dashboard/media-studio](http://localhost:3000/dashboard/media-studio).
 
-If you want ReplyGuy to embed this app inside its dashboard shell, run the media studio on a separate port/domain and set this in the main ReplyGuy app:
+### Standalone dev (optional)
+
+To run only the original `platform/` app for package development:
 
 ```bash
-MEDIA_STUDIO_URL=http://localhost:3001
+cd media-studio
+npm install
+cp .env.example .env.local
+npm run dev
 ```
 
 ## Project Structure
