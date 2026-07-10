@@ -79,6 +79,28 @@ The `media-studio/` folder contains the MuAPI client, workflow engine, and Gener
 
 See [media-studio/README.md](media-studio/README.md) for package-level docs.
 
+### VPS deployment (no Vercel)
+
+On your own server (e.g. Hostinger VPS):
+
+```bash
+# One-time: clone, env, Node 20+
+git clone https://github.com/bennymalonee/ReplyGuy-clone.git
+cd ReplyGuy-clone
+cp .env.example .env.local   # fill DATABASE_URL, NEXTAUTH_*, MUAPI_API_KEY, etc.
+
+npm install --legacy-peer-deps
+bash scripts/vps-deploy.sh
+```
+
+Run behind nginx/Caddy with SSL, proxying to `http://127.0.0.1:3000`.
+
+**PM2:** `ecosystem.config.js` is included — deploy script restarts it automatically.
+
+**Cron:** Vercel crons do not apply on VPS. Use `scripts/vps-cron.example` with system crontab to hit `/api/cron/campaign/*`.
+
+**Media studio DB:** `npm run db:push` (or `deploy:vps`) creates `media_studio_*` tables on your Postgres.
+
 > [!NOTE]  
 > I use [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) package for update this project.
 >
