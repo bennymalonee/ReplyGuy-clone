@@ -14,7 +14,7 @@ export const env = createEnv({
     RESEND_API_KEY: z.string().min(1),
     STRIPE_API_KEY: z.string().min(1),
     STRIPE_WEBHOOK_SECRET: z.string().min(1),
-    MUAPI_API_KEY: z.string().min(1).optional(),
+    MUAPI_API_KEY: z.string().optional(),
   },
   client: {
     NEXT_PUBLIC_APP_URL: z.string().min(1),

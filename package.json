@@ -15,7 +15,7 @@
     "preview": "next build && next start",
     "email": "email dev --dir emails --port 3333",
     "postinstall": "prisma generate",
-    "db:push": "prisma db push",
+    "db:push": "node scripts/db-push.mjs",
     "deploy:vps": "npm run db:push && npm run build",
     "pushreset": "prisma db push --force-reset",
     "db-seed": "prisma db seed"
