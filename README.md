@@ -43,6 +43,16 @@ cp .env.example .env.local   # add MUAPI_API_KEY
 npm run dev                  # http://localhost:3000
 ```
 
+To open the studio from the main ReplyGuy app navigation, set one of these in the main app environment:
+
+```bash
+MEDIA_STUDIO_URL=http://localhost:3001
+# or
+NEXT_PUBLIC_MEDIA_STUDIO_URL=http://localhost:3001
+```
+
+Then run the media studio on that URL/port so `/dashboard/media-studio` and `/project/media-studio` can redirect authenticated users into it.
+
 Features:
 - UGC Video Factory, Ads Workflow, Lifestyle Try-On
 - Image & Video studios (100+ MuAPI models)

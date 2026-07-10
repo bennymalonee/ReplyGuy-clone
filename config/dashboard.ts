@@ -3,14 +3,8 @@ import { DashboardConfig } from "types";
 export const dashboardConfig: DashboardConfig = {
   mainNav: [
     {
-      title: "Documentation",
-      href: "/docs",
-      disabled: true,
-    },
-    {
-      title: "YouTube",
-      href: "/support",
-      disabled: true,
+      title: "Media Studio",
+      href: "/dashboard/media-studio",
     },
   ],
   sidebarNav: [
@@ -18,6 +12,11 @@ export const dashboardConfig: DashboardConfig = {
       title: "Campaigns",
       href: "/dashboard",
       icon: "campaign",
+    },
+    {
+      title: "Media Studio",
+      href: "/dashboard/media-studio",
+      icon: "logo",
     },
     {
       title: "Activity Log",
@@ -79,6 +78,11 @@ export const dashboardConfig: DashboardConfig = {
           title: "Keyword Explorer",
           href: "/project/explorer",
           icon: "search",
+        },
+        {
+          title: "Media Studio",
+          href: "/project/media-studio",
+          icon: "logo",
         }
       ],
     },

@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 import { authOptions } from "@/lib/auth";
 import { getCurrentUser } from "@/lib/session";
@@ -9,6 +10,8 @@ import { EmptyCampaignCard } from "@/components/dashboard/empty-campaign-card";
 import { DashboardHeader } from "@/components/dashboard/header";
 import { DashboardShell } from "@/components/dashboard/shell";
 import { SubscriptionModal } from "@/components/dashboard/subscription-modal";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { getAllCampaigns } from "@/app/actions/campaign";
 
 export const metadata = {
@@ -42,11 +45,19 @@ export default async function OverviewPage() {
         heading="Overview"
         text="Manage your campaigns to advertise."
       >
-        {subscriptionPlan.stripeSubscriptionId ? (
-          <AddCampaignModal />
-        ) : (
-          <SubscriptionModal user={user} subscriptionPlan={subscriptionPlan} />
-        )}
+        <div className="flex items-center gap-2">
+          <Link
+            href="/dashboard/media-studio"
+            className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+          >
+            Open Media Studio
+          </Link>
+          {subscriptionPlan.stripeSubscriptionId ? (
+            <AddCampaignModal />
+          ) : (
+            <SubscriptionModal user={user} subscriptionPlan={subscriptionPlan} />
+          )}
+        </div>
       </DashboardHeader>
 
       {/* Moved activity log to it's own tab under Overview */}

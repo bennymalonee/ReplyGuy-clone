@@ -29,6 +29,12 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) for the creator studio.
 Open [http://localhost:3000/dashboard](http://localhost:3000/dashboard) for the admin dashboard.
 
+If you want ReplyGuy to deep-link authenticated users into this app, run the media studio on a separate port and set this in the main ReplyGuy app:
+
+```bash
+MEDIA_STUDIO_URL=http://localhost:3001
+```
+
 ## Project Structure
 
 ```
