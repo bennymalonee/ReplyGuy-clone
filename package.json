@@ -8,13 +8,14 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma db push && next build",
     "turbo": "next dev --turbo",
     "start": "next start",
     "lint": "next lint",
     "preview": "next build && next start",
     "email": "email dev --dir emails --port 3333",
     "postinstall": "prisma generate",
+    "db:push": "prisma db push",
     "pushreset": "prisma db push --force-reset",
     "db-seed": "prisma db seed"
   },
