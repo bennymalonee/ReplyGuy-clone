@@ -1,0 +1,16 @@
+{
+  "name": "@ultimate-multimodal/muapi-client",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types src/schema.test.ts"
+  },
+  "dependencies": {
+    "@ultimate-multimodal/shared": "*"
+  }
+}

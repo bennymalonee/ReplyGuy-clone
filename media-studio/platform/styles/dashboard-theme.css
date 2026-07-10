@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-navy: #0c1754;
+  --color-electric-cobalt: #2545ff;
+  --color-charcoal: #171417;
+  --color-warm-canvas: #f9f8f6;
+  --color-paper-white: #ffffff;
+  --color-cream-border: #f0e9e1;
+  --color-graphite: #222222;
+  --color-stone: #969696;
+  --color-smoke: #cccccc;
+  --color-lavender-mist: #eaebf8;
+  --font-display: var(--font-serif), Georgia, serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --radius-cards: 16px;
+  --radius-buttons: 100px;
+  --shadow-dashboard: 0 4px 24px rgba(12, 23, 84, 0.08);
+}
+
+.dashboard-theme {
+  background-color: var(--color-warm-canvas);
+  color: var(--color-charcoal);
+  min-height: 100vh;
+}
+
+.dashboard-card {
+  background: var(--color-paper-white);
+  border-radius: var(--radius-cards);
+  box-shadow: var(--shadow-dashboard);
+  padding: 32px;
+}
+
+.dashboard-card-dark {
+  background: var(--color-ink-navy);
+  color: var(--color-paper-white);
+  border-radius: var(--radius-cards);
+  padding: 32px;
+}
+
+.dashboard-card-bordered {
+  background: var(--color-paper-white);
+  border: 1.5px solid var(--color-electric-cobalt);
+  border-radius: var(--radius-cards);
+  padding: 32px;
+}
+
+.dashboard-pill-btn {
+  background: var(--color-electric-cobalt);
+  color: var(--color-paper-white);
+  border-radius: var(--radius-buttons);
+  font-weight: 500;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.dashboard-pill-btn:hover {
+  opacity: 0.9;
+}
+
+.dashboard-pill-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dashboard-ghost-btn {
+  background: transparent;
+  color: var(--color-graphite);
+  font-weight: 500;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dashboard-input {
+  border: 1px solid var(--color-smoke);
+  border-radius: var(--radius-cards);
+  padding: 12px 16px;
+  width: 100%;
+  background: var(--color-paper-white);
+}
+
+.dashboard-headline {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  line-height: 1.1;
+  color: var(--color-charcoal);
+}
+
+.dashboard-headline em {
+  font-style: italic;
+}
+
+.dashboard-accordion-row {
+  background: var(--color-paper-white);
+  border-bottom: 1px solid var(--color-cream-border);
+  padding: 24px 0;
+}
+
+.dashboard-badge {
+  background: var(--color-lavender-mist);
+  color: var(--color-ink-navy);
+  border-radius: var(--radius-cards);
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+}

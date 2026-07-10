@@ -39,5 +39,10 @@ next-env.d.ts
 # email
 /.react-email/
 
+# media studio (npm workspace)
+/media-studio/node_modules
+/media-studio/data
+/media-studio/platform/.next
+
 .vscode
 .contentlayer

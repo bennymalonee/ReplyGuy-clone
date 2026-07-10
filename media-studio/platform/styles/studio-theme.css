@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-studio-black: #000000;
+  --color-pure-white: #ffffff;
+  --color-deep-ink: #0b1215;
+  --color-graphite-stroke: #394649;
+  --color-fog-border: #e0e0e0;
+  --color-ash-mid: #757575;
+  --color-charcoal-surface: #232424;
+  --color-skill-green: #55da9b;
+  --color-neon-pulse: #00ff84;
+  --color-electric-cyan: #24c2f2;
+  --color-creator-violet: #6927ef;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --radius-cards: 4px;
+  --radius-buttons: 4px;
+  --radius-elevated: 8px;
+  --shadow-sm: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+}
+
+.studio-theme {
+  --theme-bg: var(--color-pure-white);
+  --theme-text: var(--color-deep-ink);
+  --theme-accent: var(--color-skill-green);
+  --theme-surface-dark: var(--color-studio-black);
+  --theme-card-dark: var(--color-charcoal-surface);
+}
+
+.studio-section-dark {
+  background-color: var(--color-studio-black);
+  color: var(--color-pure-white);
+}
+
+.studio-section-light {
+  background-color: var(--color-pure-white);
+  color: var(--color-deep-ink);
+}
+
+.studio-headline {
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+}
+
+.studio-cta {
+  background-color: var(--color-skill-green);
+  color: var(--color-deep-ink);
+  border-radius: var(--radius-buttons);
+  font-weight: 600;
+  padding: 8px 16px;
+  transition: opacity 0.15s;
+}
+
+.studio-cta:hover {
+  opacity: 0.9;
+}
+
+.studio-cta:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.studio-input {
+  border: 1px solid var(--color-fog-border);
+  border-radius: var(--radius-cards);
+  padding: 10px 14px;
+  width: 100%;
+  background: var(--color-pure-white);
+  color: var(--color-deep-ink);
+}
+
+.studio-input::placeholder {
+  color: var(--color-ash-mid);
+}
+
+.media-card-scrim {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+}
